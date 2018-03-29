@@ -1,12 +1,12 @@
 {
   "$schema": "../../node_modules/ng-packagr/package.schema.json",
-  "name": "angular-modal-gallery",
+  "name": "@ks89/angular-modal-gallery",
   "version": "5.4.0-beta.3",
   "ngPackage": {
     "lib": {
       "entryFile": "index.ts"
     },
-    "dest": "angular-modal-gallery"
+    "dest": "./@ks89/angular-modal-gallery"
   },
   "description": "Modal image gallery for Angular >=4",
   "license": "MIT",

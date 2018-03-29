@@ -5,7 +5,7 @@
     "coverage/**",
     ".scannerwork/**",
     "reports/**",
-    "angular-modal-gallery/**",
+    "@ks89/**",
     "docs/**"
   ],
   "test": [
