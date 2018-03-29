@@ -222,7 +222,7 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
 
   /**
    * Method called by custom upper buttons.
-   * @param {ButtonEvent} event payload
+   * @param ButtonEvent event payload
    */
   onCustomEmit(event: ButtonEvent) {
     const eventToEmit: ButtonEvent = this.getButtonEventToEmit(event);
@@ -235,7 +235,7 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
   // /**
   //  * Method called by the refresh upper button.
   //  * STILL NOT IMPLEMENTED, SO DON'T USE IT
-  //  * @param {ButtonEvent} event payload
+  //  * @param ButtonEvent event payload
   //  */
   // onRefresh(event: ButtonEvent) {
   //   const eventToEmit: ButtonEvent = this.getButtonEventToEmit(event);
@@ -268,7 +268,7 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
 
   /**
    * Method called by the delete upper button.
-   * @param {ButtonEvent} event payload
+   * @param ButtonEvent event payload
    */
   onDelete(event: ButtonEvent) {
     const eventToEmit: ButtonEvent = this.getButtonEventToEmit(event);
@@ -291,7 +291,7 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
 
   /**
    * Method called by the navigate upper button.
-   * @param {ButtonEvent} event payload
+   * @param ButtonEvent event payload
    */
   onNavigate(event: ButtonEvent) {
     const eventToEmit: ButtonEvent = this.getButtonEventToEmit(event);
@@ -312,7 +312,7 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
 
   /**
    * Method called by the download upper button.
-   * @param {ButtonEvent} event payload
+   * @param ButtonEvent event payload
    */
   onDownload(event: ButtonEvent) {
     const eventToEmit: ButtonEvent = this.getButtonEventToEmit(event);
@@ -323,8 +323,8 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
 
   /**
    * Method called by the close upper button.
-   * @param {ButtonEvent} event payload
-   * @param {Action} action that triggered the close method. `Action.NORMAL` by default
+   * @param ButtonEvent event payload
+   * @param Action action that triggered the close method. `Action.NORMAL` by default
    */
   onCloseGallery(event: ButtonEvent, action: Action = Action.NORMAL) {
     const eventToEmit: ButtonEvent = this.getButtonEventToEmit(event);
@@ -336,7 +336,7 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
   /**
    * Method to close the modal gallery specifying the action.
    * It also reset the `keyboardService` to prevent multiple listeners.
-   * @param {Action} action type. `Action.NORMAL` by default
+   * @param Action action type. `Action.NORMAL` by default
    */
   closeGallery(action: Action = Action.NORMAL) {
     this.close.emit(new ImageModalEvent(action, true));
@@ -349,7 +349,7 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
 
   /**
    * Method called when you click on an image of your plain (or inline) gallery.
-   * @param {number} index of the clicked image
+   * @param number index of the clicked image
    */
   onShowModalGallery(index: number) {
     this.showModalGallery(index);
@@ -361,7 +361,7 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
    * It will also register a new `keyboardService` to catch keyboard's events to download the current
    * image with keyboard's shortcuts. This service, will be removed either when modal gallery component
    * will be destroyed or when the gallery is closed invoking the `closeGallery` method.
-   * @param {number} index of the image to show
+   * @param number index of the image to show
    */
   showModalGallery(index: number) {
     // hides scrollbar
@@ -386,7 +386,7 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
 
   /**
    * Method called when the image changes and used to update the `currentImage` object.
-   * @param {ImageModalEvent} event payload
+   * @param ImageModalEvent event payload
    */
   onChangeCurrentImage(event: ImageModalEvent) {
     const newIndex: number = <number>event.result;
@@ -411,7 +411,7 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
   /**
    * Method called when you click 'outside' (i.e. on the semi-transparent background)
    * to close the modal gallery if `enableCloseOutside` is true.
-   * @param {boolean} event payload. True to close the modal gallery, false otherwise
+   * @param boolean event payload. True to close the modal gallery, false otherwise
    */
   onClickOutside(event: boolean) {
     if (event && this.enableCloseOutside) {
@@ -422,7 +422,7 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
   /**
    * Method called when an image is loaded and the loading spinner has gone.
    * It sets the previouslyLoaded flag inside the Image to hide loading spinner when displayed again.
-   * @param {ImageLoadEvent} event payload
+   * @param ImageLoadEvent event payload
    */
   onImageLoad(event: ImageLoadEvent) {
     // console.log('modal-image onImageLoad', event);
@@ -441,7 +441,7 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
 
   /**
    * Method called when a dot is clicked and used to update the current image.
-   * @param {number} index of the clicked dot
+   * @param number index of the clicked dot
    */
   onClickDot(index: number) {
     this.currentImage = this.images[index];
@@ -449,7 +449,7 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
 
   /**
    * Method called when an image preview is clicked and used to update the current image.
-   * @param {Image} preview image
+   * @param Image preview image
    */
   onClickPreview(preview: Image) {
     const imageFound: InternalLibImage | undefined = this.images.find((img: InternalLibImage) => img.id === preview.id);
@@ -517,8 +517,8 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
   /**
    * Private method to get the `ButtonEvent` to emit, merging the input `ButtonEvent`
    * with the current image.
-   * @param {ButtonEvent} event payload to return
-   * @returns {ButtonEvent} event payload with the current image included
+   * @param ButtonEvent event payload to return
+   * @returns ButtonEvent event payload with the current image included
    */
   private getButtonEventToEmit(event: ButtonEvent): ButtonEvent {
     return Object.assign(event, { image: this.currentImage });
@@ -527,8 +527,8 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
   /**
    * Private method to get the filename from an input path.
    * This is used to get the image's name from its path.
-   * @param {string} path that represents the path of the image
-   * @returns {string} string filename from the input path
+   * @param string path that represents the path of the image
+   * @returns string string filename from the input path
    */
   private getFileName(path: string): string {
     return path.replace(/^.*[\\\/]/, '');
@@ -567,7 +567,7 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
    * Microsoft browsers or not (i.e. it detects both IE11 and Edge)
    * supporting also Server-Side Rendering.
    * Inspired by https://msdn.microsoft.com/it-it/library/hh779016(v=vs.85).aspx
-   * @returns {any} the result
+   * @returns any the result
    */
   private isIEorEdge(): any {
     if (isPlatformBrowser(this.platformId)) {
