@@ -44,7 +44,7 @@ import {
   PlainGalleryConfig,
   PlainGalleryStrategy,
   PreviewConfig
-} from 'angular-modal-gallery';
+} from '@ks89/angular-modal-gallery';
 
 @Component({
   selector: 'app-root',
