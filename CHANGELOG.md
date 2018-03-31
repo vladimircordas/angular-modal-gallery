@@ -1,4 +1,5 @@
 # 6.0.0-alpha.2
+### Features
 - Description bottom margin in modal image is now 0px instead of 5px (BREAKING CHANGE)
 
 ### Internal lib changes
