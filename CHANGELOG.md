@@ -1,3 +1,12 @@
+# 6.0.0-alpha.2
+- Description bottom margin in modal image is now 0px instead of 5px (BREAKING CHANGE)
+
+### Internal lib changes
+- migrate to angular 6
+- migrate ru rxjs 6
+- migrate to angular-cli 6
+
+
 # 6.0.0-alpha.1
 ### Features
 - Support Angular Package Format specification v5 (BREAKING CHANGE)
