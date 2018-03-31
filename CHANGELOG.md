@@ -1,3 +1,8 @@
+# 5.6.0
+### Features
+- trigger navigation after adding new image (requested by @pieterdegraeuwe) #127
+
+
 # 5.5.0
 ### Features
 - add new spinners https://codepen.io/WebSonata/pen/bRaONB, https://codepen.io/nikhil8krishnan/pen/dMEzGx, https://codepen.io/devilishalchemist/pen/emOVYQ #117
