@@ -1,6 +1,6 @@
-# 5.6.0
+# 5.6.0-beta.1
 ### Features
-- trigger navigation after adding new image (requested by @pieterdegraeuwe) #127
+- trigger navigation after adding new image (requested by @pieterdegraeuwe and also related to another request by @tobi-or-not-tobi) #127 #131
 
 
 # 5.5.0
